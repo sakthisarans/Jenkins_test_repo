@@ -6,5 +6,5 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:17
 VOLUME /tmp
 COPY --from=build /home/app/target/jenkinsTest-0.0.1-SNAPSHOT.jar  app.jar
-
+EXPOSE 81
 ENTRYPOINT exec java $JAVA_OPTS  -jar /app.jar
